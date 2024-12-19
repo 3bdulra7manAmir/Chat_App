@@ -98,19 +98,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     if (formKey.currentState!.validate()) {
                       isLoading = true;
                       setState(() {});
-                      try {
-                        await registerUser();
-
-                        Navigator.pushNamed(context, ChatPage.id);
-                      } on FirebaseAuthException catch (ex) {
-                        if (ex.code == 'weak-password') {
-                          showSnackBar(context, 'weak password');
-                        } else if (ex.code == 'email-already-in-use') {
-                          showSnackBar(context, 'email already exists');
-                        }
-                      } catch (ex) {
-                        showSnackBar(context, 'there was an error');
-                      }
+                      
 
                       isLoading = false;
                       setState(() {});
@@ -151,8 +139,4 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 
-  Future<void> registerUser() async {
-    UserCredential user = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(email: email!, password: password!);
-  }
 }
