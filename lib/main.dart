@@ -1,3 +1,4 @@
+import 'package:chat_app_re/pages/chat_cubit/chat_cubit.dart';
 import 'package:chat_app_re/pages/chat_page.dart';
 import 'package:chat_app_re/pages/login_cubit/login_cubit.dart';
 import 'package:chat_app_re/pages/login_page.dart';
@@ -29,7 +30,8 @@ class ScholarChat extends StatelessWidget
       providers:
       [
         BlocProvider<LoginCubit>(create: (context) => LoginCubit(),),
-        BlocProvider<RegisterCubit>(create: (context) => RegisterCubit(),)
+        BlocProvider<RegisterCubit>(create: (context) => RegisterCubit(),),
+        BlocProvider<ChatCubit>(create: (context) => ChatCubit(),),
       ],
       child: MaterialApp(
         routes: {
