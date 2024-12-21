@@ -2,9 +2,7 @@ import 'package:chat_app_re/pages/chat_cubit/chat_cubit.dart';
 import 'package:chat_app_re/pages/chat_cubit/chat_state.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app_re/constants.dart';
-import 'package:chat_app_re/models/message.dart';
 import 'package:chat_app_re/widgets/chat_buble.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ChatPage extends StatelessWidget
